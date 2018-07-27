@@ -15,7 +15,7 @@ var app=express(); //initializing express
 //     next();
 // });
 
-app.listen(3002, ()=>{
+app.listen(3000, ()=>{
     console.log('server has started');
 })
 
