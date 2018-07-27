@@ -15,7 +15,7 @@ var app=express(); //initializing express
 //     next();
 // });
 
-app.listen(3000, ()=>{
+app.listen(process.env.PORT || 3002, ()=>{
     console.log('server has started');
 })
 
