@@ -33,8 +33,6 @@ app.use(function (req, res, next) {
 
 
 app.post('/formPage', (req, res)=>{
-    console.log(req);
-    console.log(req.body);
 
     var transporter=nodemailer.createTransport({
         service:'gmail',
