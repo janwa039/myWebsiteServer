@@ -18,7 +18,12 @@ app.use(bodyParser.json());
 //     next();
 // });
 
-app.use('/formPage', (req, res)=>{
+app.listen(3002, ()=>{
+    console.log('server has started');
+})
+
+app.post('/formPage', (req, res)=>{
+    console.log(req);
     console.log(req.body);
 
     var transporter=nodemailer.createTransport({
@@ -46,7 +51,3 @@ app.use('/formPage', (req, res)=>{
     })
     res.end();
 });
-
-app.listen(3002, ()=>{
-    console.log('server has started');
-})
