@@ -8,9 +8,6 @@ var bodyParser=require("body-parser");
 
 var app=express(); //initializing express
 
-app.use(bodyParser.json());
-
-
 //
 // app.use(function(req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "*");
@@ -21,6 +18,19 @@ app.use(bodyParser.json());
 app.listen(3002, ()=>{
     console.log('server has started');
 })
+
+app.use(function (req, res, next) {
+   console.log("REQUESTING STUFF");
+   next();
+});
+
+app.use(bodyParser.json());
+
+app.use(function (req, res, next) {
+    console.log("REQUESTING STUFF 2");
+    next();
+});
+
 
 app.post('/formPage', (req, res)=>{
     console.log(req);
@@ -50,4 +60,9 @@ app.post('/formPage', (req, res)=>{
 
     })
     res.end();
+});
+
+app.use(function (req, res, next) {
+    console.log("REQUESTING STUFF 3");
+    next();
 });
