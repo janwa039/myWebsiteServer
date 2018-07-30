@@ -19,10 +19,10 @@ app.listen(process.env.PORT || 3002, ()=>{
     console.log('server has started');
 })
 
-app.use(function (req, res, next) {
-   console.log("REQUESTING STUFF");
-   next();
-});
+// app.use(function (req, res, next) {
+//    console.log("REQUESTING STUFF");
+//    next();
+// });
 
 app.use(bodyParser.json());
 
@@ -33,7 +33,6 @@ app.use(function (req, res, next) {
 
 
 app.post('/formPage', (req, res)=>{
-    console.log(req.body);
 
     var transporter=nodemailer.createTransport({
         service:'gmail',
