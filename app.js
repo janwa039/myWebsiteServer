@@ -46,7 +46,7 @@ app.post('/formPage', (req, res)=>{
         from:req.body.valueEmail,
         to:process.env.USER,
         subject:req.body.valueSubject,
-        text:req.body.valueMessage
+        text:req.body.valueMessage + '\n' + `Email: ${req.body.valueEmail}`
 
     }
     transporter.sendMail(mailOptions, function(error, info){
